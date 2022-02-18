@@ -105,7 +105,7 @@ class Game extends React.Component
             var rightEdge = i % 30 === 29 ? true : false;
 
             // Check cells above
-            if (above > 0)
+            if (above >= 0)
             {
                 if (!leftEdge && this.state.mines[above-1] === "💣") count++;
                 if (this.state.mines[above] === "💣") count++;
@@ -117,7 +117,7 @@ class Game extends React.Component
             if (!rightEdge && this.state.mines[i+1] === "💣") count++;
 
             // Check cells below
-            if (below < 479)
+            if (below <= 479)
             {
                 if (!leftEdge && this.state.mines[below-1] === "💣") count++;
                 if (this.state.mines[below] === "💣") count++;
